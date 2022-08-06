@@ -8,7 +8,7 @@ const HCard = () => {
       <StaticImage
         alt="portrait of the author"
         src="../images/portrait.png"
-        class="u-photo"
+        imgClassName='u-photo'
       />
       <p class="p-note">I am a FullStack Developer and Designer who knows his way around ReactJS, Ruby on Rails, JavaScript, HTML, CSS and UI Design. </p>
     </div>

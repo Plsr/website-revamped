@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const HCard = () => {
   return (
-    <div class="h-card">
+    <div class="h-card" style={{ display: 'none' }}>
       <a class="p-name u-url" rel="me" href="https://chris-new-website.netlify.app/">Christian Poplawski</a>
       <StaticImage
         alt="portrait of the author"

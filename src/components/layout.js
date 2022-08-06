@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import HCard from './h-card'
+import AuthorCard from './author-card'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +17,7 @@ const Layout = ({ pageTitle, children }) => {
     <>
       <title>{ pageTitle } | { data.site.siteMetadata.title }</title>
       <header>{ data.site.siteMetadata.title }</header>
-      <HCard />
+      <AuthorCard />
 
       <nav>
         <ul>
@@ -27,10 +27,7 @@ const Layout = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main>
-        <h1>{ pageTitle }</h1>
-        <div>
-          { children }
-        </div>
+        { children }
       </main>
     </>
   )

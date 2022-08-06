@@ -1,9 +1,9 @@
 import * as React from 'react'
 import Layout from './layout'
 
-const ContentLayout = ({ children }) => {
+const ContentLayout = ({ children, pageTitle }) => {
   return (
-    <Layout>
+    <Layout pageTitle={pageTitle} >
       <article class="h-entry">
         { children }
       </article>

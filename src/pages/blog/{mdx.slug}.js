@@ -9,12 +9,10 @@ const BlogPost = ({ data }) => {
   const location = useLocation()
 
   return (
-    <ContentLayout>
+    <ContentLayout pageTitle={data.mdx.frontmatter.title}>
       <h1 class="p-name">{ data.mdx.frontmatter.title }</h1>
       <a class="u-url" href={location.pathname}>
-        <span class="dt-published">
-          Published {data.mdx.frontmatter.date}
-        </span>
+          Published <span class="dt-published">{data.mdx.frontmatter.date}</span>
       </a>
       <div class="p-author h-card">
         <AuthorPhoto />

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import HCard from './h-card'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -16,7 +17,8 @@ const Layout = ({ pageTitle, children }) => {
     <>
       <title>{ pageTitle } | { data.site.siteMetadata.title }</title>
       <header>{ data.site.siteMetadata.title }</header>
-      <a class="h-card" rel="me" href="https://chris-new-website.netlify.app/">Christian Poplawski</a>
+      <HCard />
+
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>

@@ -3,6 +3,8 @@ import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
+export { Head } from '../components/head'
+
 const Blog = ({ data }) => {
   return(
     <Layout pageTitle="Blog Posts">

@@ -1,6 +1,8 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 
+export { Head } from '../components/head'
+
 const AboutPage = () => {
   return (
     <Layout pageTitle="About me">

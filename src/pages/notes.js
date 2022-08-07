@@ -1,20 +1,18 @@
 import * as React from 'react'
 import PageLayout from '../components/page-layout'
-import { graphql, Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-export { Head } from '../components/head'
-
-const Blog = ({ data }) => {
-  return(
-    <PageLayout pageTitle="Blog Posts">
+const Notes = ({ data }) => {
+  return (
+    <PageLayout pageTitle="Notes">
       {data.allMdx.edges.map(edge => (
         <article key={edge.node.slug}>
-          <Link to={edge.node.slug}><h2>{ edge.node.frontmatter.title }</h2></Link>
-          <p>published: { edge.node.frontmatter.date }</p>
           <MDXRenderer>
             { edge.node.body }
           </MDXRenderer>
+          <p>published: { edge.node.frontmatter.date }</p>
+          <Link to={edge.node.slug}>Permalink</Link>
         </article>
       ))}
     </PageLayout>
@@ -25,7 +23,7 @@ export const query = graphql`
   query {
     allMdx(
       sort: {fields: frontmatter___date, order: DESC}
-      filter: {fileAbsolutePath: {regex: "/blog/"}}
+      filter: {fileAbsolutePath: {regex: "/notes/"}}
       ) {
       edges {
         node {
@@ -42,4 +40,4 @@ export const query = graphql`
   }
 `
 
-export default Blog
+export default Notes

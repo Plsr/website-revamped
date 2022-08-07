@@ -3,7 +3,7 @@ import Layout from './layout'
 
 const PageLayout = ({ pageTitle, children }) => {
   return (
-    <Layout>
+    <Layout pageTitle={pageTitle}>
       <h1>{ pageTitle }</h1>
       <>
         { children }

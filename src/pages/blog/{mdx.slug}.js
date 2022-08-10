@@ -3,7 +3,7 @@ import ContentLayout from '../../components/content-layout'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { useLocation } from '@reach/router'
-import AuthorPhoto from '../../components/author-photo'
+import PostAuthorCard from '../../components/post-author-card'
 
 const BlogPost = ({ data }) => {
   const location = useLocation()
@@ -14,11 +14,7 @@ const BlogPost = ({ data }) => {
       <a className="u-url" href={location.pathname}>
         Published <span className="dt-published">{data.mdx.frontmatter.date}</span>
       </a>
-      <div className="p-author h-card">
-        <AuthorPhoto />
-        <span>Written by</span>
-        <span className="p-name">Christian Poplawski</span>
-      </div>
+      <PostAuthorCard />
       <div className="e-content">
         <MDXRenderer>
           {data.mdx.body}

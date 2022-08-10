@@ -1,23 +1,24 @@
 import * as React from 'react'
-import ContentLayout from '../../components/content-layout'
 import { graphql } from 'gatsby'
+import ContentLayout from '../../components/content-layout'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { useLocation } from '@reach/router'
+import { useLocation }  from '@reach/router'
 import PostAuthorCard from '../../components/post-author-card'
 
-const BlogPost = ({ data }) => {
+
+const Note = ({ data }) => {
   const location = useLocation()
 
   return (
-    <ContentLayout pageTitle={data.mdx.frontmatter.title}>
-      <h1 className="p-name">{ data.mdx.frontmatter.title }</h1>
+    <ContentLayout pageTitle={data.mdx.frontmatter.title} showHeader={false}>
+      <h1 className="p-name" style={{ display: 'none' }}>{ data.mdx.frontmatter.title }</h1>
       <a className="u-url" href={location.pathname}>
         Published <span className="dt-published">{data.mdx.frontmatter.date}</span>
       </a>
-      <PostAuthorCard />
-      <div className="e-content">
+      <PostAuthorCard visible={false} />
+      <div className='e-content'>
         <MDXRenderer>
-          {data.mdx.body}
+          { data.mdx.body }
         </MDXRenderer>
       </div>
     </ContentLayout>
@@ -36,4 +37,4 @@ export const query = graphql`
   }
 `
 
-export default BlogPost
+export default Note

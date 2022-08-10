@@ -12,7 +12,7 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)
-
+  
   return (
     <>
       <title>{ pageTitle } | { data.site.siteMetadata.title }</title>
@@ -24,6 +24,7 @@ const Layout = ({ pageTitle, children }) => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/notes">Notes</Link></li>
         </ul>
       </nav>
       <main>

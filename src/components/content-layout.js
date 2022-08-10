@@ -3,8 +3,8 @@ import Layout from './layout'
 
 const ContentLayout = ({ children, pageTitle }) => {
   return (
-    <Layout pageTitle={pageTitle} >
-      <article class="h-entry">
+    <Layout pageTitle={pageTitle}>
+      <article className="h-entry">
         { children }
       </article>
     </Layout>

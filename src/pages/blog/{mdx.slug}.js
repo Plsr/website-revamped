@@ -10,16 +10,16 @@ const BlogPost = ({ data }) => {
 
   return (
     <ContentLayout pageTitle={data.mdx.frontmatter.title}>
-      <h1 class="p-name">{ data.mdx.frontmatter.title }</h1>
-      <a class="u-url" href={location.pathname}>
-          Published <span class="dt-published">{data.mdx.frontmatter.date}</span>
+      <h1 className="p-name">{ data.mdx.frontmatter.title }</h1>
+      <a className="u-url" href={location.pathname}>
+        Published <span className="dt-published">{data.mdx.frontmatter.date}</span>
       </a>
-      <div class="p-author h-card">
+      <div className="p-author h-card">
         <AuthorPhoto />
         <span>Written by</span>
-        <span class="p-name">Christian Poplawski</span>
+        <span className="p-name">Christian Poplawski</span>
       </div>
-      <div class="e-content">
+      <div className="e-content">
         <MDXRenderer>
           {data.mdx.body}
         </MDXRenderer>

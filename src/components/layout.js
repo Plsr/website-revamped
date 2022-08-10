@@ -12,7 +12,7 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)
-
+  
   return (
     <>
       <title>{ pageTitle } | { data.site.siteMetadata.title }</title>

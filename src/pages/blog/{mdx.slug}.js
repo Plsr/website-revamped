@@ -36,4 +36,6 @@ export const query = graphql`
   }
 `
 
+export { Head } from '../../components/head'
+
 export default BlogPost
